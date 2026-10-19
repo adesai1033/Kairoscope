@@ -1,0 +1,4 @@
+{
+  "_comment": "Per-provider/model prices. Every entry must include a source URL and date. Never invent prices.",
+  "providers": {}
+}

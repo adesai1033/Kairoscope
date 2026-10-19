@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling>=1.32"]
+build-backend = "hatchling.build"
+
+[project]
+name = "kairoscope"
+version = "0.1.0.dev0"
+description = "Decide which frames, at what resolution, a vision model actually needs to see."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "av>=19.0",
+    "numpy>=2.5",
+    "pillow>=13.0",
+]
+
+[project.optional-dependencies]
+claude = ["anthropic>=1.15"]
+
+[dependency-groups]
+dev = [
+    "mypy>=2.4",
+    "pytest>=9.1",
+    "pytest-cov",
+    "ruff>=0.17",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/kairoscope"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+strict = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "live: calls real model APIs; skipped unless --live is passed and ANTHROPIC_API_KEY is set",
+]

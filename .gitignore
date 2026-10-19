@@ -1,0 +1,29 @@
+# Environments and secrets
+.venv/
+.env
+.env.*
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Generated media (test clips are generated at runtime, never committed)
+*.mp4
+*.mkv
+*.webm
+*.gif
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
