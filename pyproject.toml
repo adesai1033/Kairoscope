@@ -39,6 +39,7 @@ strict = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["src"]
 markers = [
     "live: calls real model APIs; skipped unless --live is passed and ANTHROPIC_API_KEY is set",
 ]

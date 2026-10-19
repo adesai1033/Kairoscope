@@ -32,6 +32,16 @@ def pytest_collection_modifyitems(config: pytest.Config, items: list[pytest.Item
             item.add_marker(skip_live)
 
 
+@pytest.fixture(scope="session")
+def counter_clip(tmp_path_factory: pytest.TempPathFactory) -> tuple[Path, int, int]:
+    """(path, frame_count, fps) for a clip whose every frame encodes its own index."""
+    from tests.fixtures.make_clip import make_counter_clip
+
+    frames, fps = 120, 30
+    path = make_counter_clip(tmp_path_factory.mktemp("clips"), frames=frames, fps=fps)
+    return path, frames, fps
+
+
 @pytest.fixture
 def basketball_clip(tmp_path: Path) -> Callable[..., tuple[Path, int]]:
     """Factory: generate a synthetic basketball clip, return (path, true release frame)."""
