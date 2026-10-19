@@ -235,7 +235,7 @@ An earlier single-file prototype (not in this repo) proved the bisection idea. B
 
 ## Launch checklist (v0.1)
 
-- [ ] Reserve `kairoscope` on PyPI with a placeholder release
+- [x] Reserve `kairoscope` on PyPI with a placeholder release (0.1.0.dev0, 2026-10-18)
 - [ ] README: tagline, demo GIF, one-line install, five-line example, headline benchmark number
 - [ ] Benchmark on a public video dataset: accuracy vs. cost against naive uniform sampling
 - [ ] Two or three example notebooks
